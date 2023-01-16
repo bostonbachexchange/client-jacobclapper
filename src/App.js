@@ -18,7 +18,7 @@ import Calendar from './components/Calendar'
 import CreateBlog from './components/blog/CreateBlog'
 import ShowBlog from './components/blog/ShowBlog'
 import CreateEvent from './components/shared/event/CreateEvent'
-
+import ContactMe from './components/ContactMe'
 
 const App = () => {
 
@@ -54,7 +54,8 @@ const App = () => {
 				<Routes>
 					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
 					<Route path='/media' element={<Media msgAlert={msgAlert} user={user} />} />
-					<Route path='/calendar' element={<Calendar msgAlert={msgAlert} user={user} updatedEvents={updatedEvents}/>} />
+					<Route path='/contact' element={<ContactMe msgAlert={msgAlert} user={user} updatedEvents={updatedEvents}/>} />
+					{/* <Route path='/calendar' element={<Calendar msgAlert={msgAlert} user={user} updatedEvents={updatedEvents}/>} /> */}
 					<Route path='/blog' element={<Blog msgAlert={msgAlert} user={user} updatedBlogs={updatedBlogs}/>} />
 					<Route
 						path='/login'

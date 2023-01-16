@@ -1,39 +1,46 @@
-import eliaspic from '../assets/images/elias-pic.jpeg'
-
+import profilepic from '../assets/images/profileNMtreeJPG.JPG'
+import nmbkg from '../assets/images/nmbkg.jpg'
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 const pageStyle = {
 	display: 'flex',
 }
-
-
+const divStyle = {
+	background: `url(${nmbkg}) no-repeat center center`,
+  };
+  
+  
 	return (
 		<>
-			<div className='p-3'>
+			<div style={divStyle} className=''>
+			<div className='p-3' style={{opacity: '1.0'}}>
 			<i class="fa fa-google" aria-hidden="true" position='absolute'></i>
-
-				<h2 className="m-auto text-center border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black'}}>Biography</h2>
+				<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Biography</h2>
 			</div>
 			<div class='bioPage'>
 				<div style={{flex: '6'}}>
-					<img className='m-4 mt-5' src={eliaspic} style={{width: '95%', border: '2px solid black', borderRadius: '10px'}}></img>
+					<img className='m-4 mt-5' src={profilepic} style={{width: '95%', border: '2px solid white', borderRadius: '10px'}}></img>
 				</div>
-				<div style={{flex: '6'}}>
-					<p className="m-4 mt-5 fs-5">Pianist Elias Dagher values music's power to tell stories and build community. He lives in  Quincy, MA. Elias recently completed a two year fellowship at Bard College, where he worked daily with both vocalists and instrumentalists in his role as a collaborative pianist, accompanying lessons, classes, and recitals. The program is headed by pianists and vocal coaches Erika Switzer and Kayo Iwama, whose deep love of art song will leave a lasting impression on Elias. 
+				<div style={{flex: '6', color: 'white', backgroundColor: ''}}>
+					<p className="m-4 mt-5 fs-5" style={{}}>Jacob Clapper current serves as music director for the Unitarian Universalist All Souls Church in Braintree, where he has worked since 2015. Jacob Clapper has been a Collaborative Pianist pianist for Curry College from 2016 to 2020, and he taught Private Music Instruction courses at the college from 2018 to 2020. He was also a collaborative pianist for Duxbury Public Schools from 2014 until 2019. He performed with Duxbury High School Chamber Singers in concerts at Strathmore Hall, Carnegie Hall and Disney. 
+					He teaches piano lessons in Duxbury, Braintree, and Melrose. 
 					<br></br>
-					<br></br>He spent the summer of 2022 at the Tanglewood Music Center, where he met and collaborated with several inspiring colleagues. Some highlights of the summer included performing Julius Eastman's Gay Guerilla for four pianos and playing the preparatory piano rehearsals for George Benjamin's opera Lessons in Love and Violence, several of which were led by the composer himself. Some of Elias's most influential piano teachers have included Eugene Kaminsky, Jeffrey Goldberg, Jerome Lowenthal, Julian Martin, Alexander Korsantia, Vivian Weilerstein, and Cameron Stowe. 
+					<br></br>
+					In 2011, Jacob received his Bachelor of Arts from Texas A&M University-Commerce, and was awarded a Graduate Assistantship at the University of Florida. While on Graduate Assistantship, he taught undergraduate courses in piano skills and accompanied the Men’s Glee Club. In 2013, he graduated from the University of Florida with a Master’s of Music degree and a concentration in piano performance. 
 					<br></br>
 					<br></br>
-					Elias also plays the mbira dzavadzimu, a plucked instrument of metal keys wound over a wooden soundboard. The instrument comes from the Shona people of Zimbabwe, and can be played both as a solo instrument and in ensembles of various sizes. He often plays, and occasionally performs, alongside a Boston-based group of practitioners of this traditional Zimbabwean music. 
+					Jacob has received piano instruction from distinguished teachers and artists such as Luis Sanchez, and Kevin Orr. He has also participated in the University of Florida International Piano Festival, and performed in an Honors Recital at Steinway Hall in Plano, Texas. 
+					<br></br>
 					</p>
 
 				</div>
 			</div>
-			<div className='w-100 p-2' style={{border: '1px solid black', }}>
+			<div className='w-100 p-2' style={{border: '2px solid black', color: 'black', backgroundColor: '#EAEAEA' }}>
 				<address className="m-2"><strong>Reach me: </strong> 
-				<a href="mailto:eid2107@columbia.edu">eid2107@columbia.edu</a>
+				<a href="mailto:clapperpianist@gmail.com">clapperpianist@gmail.com</a>
 				</address>
+			</div>
 			</div>
 		</>
 	)

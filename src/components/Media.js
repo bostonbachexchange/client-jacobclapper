@@ -1,58 +1,41 @@
+import { useState } from "react";
+import AudioPlayer from "./AudioPlayer"
+
+import track1 from '../assets/recordings/Footprints-in-the-Snow.mp3';
+import track2 from '../assets/recordings/For-the-Flowers.mp3';
+import track3 from '../assets/recordings/Freundliche-Landschaft.mp3';
+import track4 from '../assets/recordings/Jobim-MP3.mp3';
+
+const album1 = [
+  { title: 'Track 1', url: track1, duration: null, composer: 'John Doe', performer: 'Jane Doe' },
+  { title: 'Track 2', url: track2, duration: null, composer: 'John Smith', performer: 'Jane Smith' },
+];
+
+const album2 = [
+
+  { title: 'Track 3', url: track3, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
+  { title: 'Track 4', url: track4, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
+];
 
 const Media = () => {
+	const [list1, setAlbum1] = useState(album1);
+	const [list2, setAblum2] = useState(album2);
 
 	return (
-		<>
+		<div className='mb-0 pb-2' style={{backgroundColor: 'lightblue'}}>
 			<div className='p-3'>
-				<h2 className="m-auto text-center border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black'}}>Media</h2>
+				<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Media</h2>
 			</div>
-			<div>
-
-				<div className='mediaPage' >
-					<div className='mt-auto mb-auto' style={{flex: '6'}}>
-						<iframe className='rounded videoWebStyle' src="https://www.youtube.com/embed/EwGbCQMd-S4" allowFullScreen></iframe>
-					</div>
-					<div className='discriptionWeb'>
-						<h3>Mahler - “Rheinlegendchen” | NEC Liederabend Series</h3>
-						<p className="m-3 fs-5">Soprano <a href='https://www.emilysiar.com/home'>Emily Siar</a> and pianist Elias Dagher perform “Rheinlegendchen” (Little Rhine Legend) from Mahler’s Des Knaben Wunderhorn, a collection of his charming settings of German folk poems. 
-						<br></br><br></br>
-						</p>
-					</div>
+			<div className="">
+				<div className="m-auto mb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
+					<AudioPlayer tracks={list1}></AudioPlayer>
+				</div>
+				<div className="m-auto pb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
+					<AudioPlayer  tracks={list2}></AudioPlayer>
 				</div>
 
-				<div className='mediaPage mediaReverse' >
-					<div className='discriptionWeb'>
-						<h3>Janacek Violin Sonata</h3>
-						<p className="m-3 fs-5">Violinist <a href='https://www.david-bernat.com/'>David Bernat</a> and pianist Elias Dagher perform at Burnes Hall in New England Conservatory, May 2018. Recording by Simon Yue.
-						</p>
-					</div>
-					<div className='text-center' style={{flex: '6'}}>
-						<iframe className='rounded videoWebStyle'  src="https://www.youtube.com/embed/JRrzXDe-6ZY" allowFullScreen></iframe>
-					</div>
-				</div>
-				<div className='mediaPage' >
-					<div className='text-center mt-auto mb-auto' style={{flex: '6'}}>
-						<iframe className='rounded videoWebStyle' src="https://www.youtube.com/embed/E6zfq5DOCUM" allowFullScreen></iframe>
-					</div>
-					<div className='discriptionWeb' >
-						<h3 >VAP Degree Recital <br></br> <a href="https://www.paulinetanmezzo.com/">Pauline Tan</a></h3>
-						<p className="m-3 fs-5" >Bard College Conservatory Graduate Vocal Arts Program. Degree Recital on May 21, 2021 at László Z. Bitó, '60 Conservatory Building. 
-						</p>
-					</div>
-				</div>
-				<div className='mediaPage mediaReverse' >
-					<div className='discriptionWeb'>
-						<h3>Bach Sonata for Violin and Keyboard in E Major, BWV 1016</h3>
-						<p className="m-3 fs-5">Violinist <a href='https://www.yiliangjiang.net/bio'>Yiliang Jiang</a> and pianist Elias Dagher. November 14, 2019.
-						</p>
-					</div>
-					<div className='text-center' style={{flex: '6'}}>
-						<iframe className='rounded videoWebStyle'  src="https://www.youtube.com/embed/xARcVe-sqPc" allowFullScreen></iframe>
-					</div>
-				</div>
 			</div>
-
-		</>
+		</div>
 	)
 }
 

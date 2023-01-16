@@ -39,16 +39,11 @@ const Blog = (props) => {
 	const blogItems = blogs.map(blog => 
 		<>
 			<div className="m-auto mt-4 mb-5 fs-5" style={{width: '80%', border: '3px solid #AD974F', boxShadow: '3px 3px 3px grey', position: 'relative', borderRadius: '11px'}} key={blog._id}>
-				{/* <div  className='p-2' style={{backgroundColor: 'red', color: 'white', position: 'relative'}}>
-					<h4 className='p-2' style={{position: 'absolute', textAlign: 'center'}}><em>{blog.title}</em></h4>
-					<p className="font-weight-bold p-2" style={{position: 'absolute', right: 0}}>{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
-				</div> */}
 				<div style={{position: "relative", backgroundColor: '#212121', color: '#AD974F', borderTopRightRadius: '10px', borderTopLeftRadius: '10px' }}>
 					<div style={{position: "absolute", right: 0}}><p className="m-2">{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
 					</div>
                		<h1 className='m-auto p-2' style={{poistion: 'absolute', textAlign: 'center', color: '#AD974F', fontFamily: 'Roboto'}}>{blog.title}</h1>
            		</div>
-				{/* <p className="text-start">{blog.text} ... </p> */}
 				<p className='text-center p-5 mb-0 mt-0 fs-4' style={{fontFamily: 'Rajdhani', fontSize: '20px', backgroundColor: 'whitesmoke', borderRadius: '11px', color: '#212121'}}>{blog.text.slice(0, 40) } ... </p>
 				{/* {(blog.text.length > 200) ?(<Link to={`/blog/${blog._id}`}>Continue Reading</Link>) : (null)} */}
 				<div className='text-center' style={{position: 'absolute', width: '100%', bottom: '-15%', backgroundColor: 'transparent'}}>
@@ -60,17 +55,15 @@ const Blog = (props) => {
 		</>
 		)
 
-	return (
-		<>
-			<div style={{backgroundColor: 'white'}} className="mb-0 pb-5">
+	return (	
+			<div style={{backgroundColor: 'lightblue'}} className="mb-0 pb-5">
 				<div className='p-3'>
-					<h2 className="m-auto text-center border-top border-bottom" style={{width: '200px', boxShadow: '2px 2px 2px #41403C', backgroundColor: 'white'}}>Blog</h2>
+					<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Blog</h2>
 				</div>
 				<div>
 					{blogItems}
 				</div>
 			</div>
-		</>
 	)
 }
 

@@ -53,7 +53,7 @@ const ShowBlog = (props) => {
     return (
         <>
             <div  className="m-2 fs-4" style={{position: "relative"}}>
-                <div style={{position: "absolute", left: 0, color: 'lightcoral'}}><p className="m-2">Author: Elias Dagher</p></div>
+                <div style={{position: "absolute", left: 0, color: 'lightcoral'}}><p className="m-2">Author: Jacob Clapper</p></div>
                 <div style={{position: "absolute", right: 0, color: '#a17f1a'}}><p className="m-2">{dateFormat(blog.createdAt, "dddd, h:MM TT")}</p></div>
                 <h1 className='m-auto p-2 border-bottom fs-1' style={{poistion: 'absolute', textAlign: 'center', width: '100%', fontFamily: 'Lobster'}}>{blog.title}</h1>
             </div>

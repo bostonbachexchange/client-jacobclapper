@@ -2,17 +2,29 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { faYoutube} from '@fortawesome/free-brands-svg-icons'
-
 import { library } from '@fortawesome/fontawesome-svg-core'
+import Icon from '@mdi/react'
+import { mdiGoogle } from '@mdi/js'
+import { mdiFacebook } from '@mdi/js';
+import { mdiYoutube } from '@mdi/js';
+import { mdiInstagram } from '@mdi/js';
 
 library.add(faEnvelope, faYoutube)
 
 console.log('faEnvelope', faEnvelope)
 
 const linkStyle = {
+	color: 'whitesmoke',
+	textDecoration: 'none',
+	fontSize: '24px',
+	justifyContent: 'space-between',
+	marginLeft: '12px',
+	marginRight: '12px',
+  }
+const authStyle = {
 	color: 'black',
 	textDecoration: 'none',
 	fontSize: '24px',
@@ -24,7 +36,7 @@ const linkStyle = {
   
 
 const brandStyle = {
-    color: 'black',
+    color: 'white',
 	padding: '0px',
     textDecoration: 'none',
 	justifyContent: 'center',
@@ -34,22 +46,22 @@ const brandStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-2'>
-			<Link to='update-blog' style={linkStyle}>
+			<Link to='update-blog' style={authStyle}>
 				<span className='hoverClass1'>Update Blog</span>
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to='update-calendar' style={linkStyle}>
+			<Link to='update-calendar' style={authStyle}>
 				Update Calendar
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to='change-password' style={linkStyle}>
+			<Link to='change-password' style={authStyle}>
 				Change Password
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-2'>
-			<Link to='sign-out' style={linkStyle}>
+			<Link to='sign-out' style={authStyle}>
 				Log Out
 			</Link>
 		</Nav.Item>
@@ -87,8 +99,7 @@ const alwaysOptions = (
 				<>
 					<Navbar.Brand className='m-auto'>
 						<Link to='/' style={brandStyle}>
-							Eli</Link><a href='https://jacobclapper.dev' style={brandStyle}>a</a><Link to='/' style={brandStyle}>s Dagh
-						</Link><a href='https://jacobclapper.dev' style={brandStyle}>er</a>
+							Jacob Clapper</Link>
 					</Navbar.Brand>
 				</>
 				<>
@@ -100,11 +111,18 @@ const alwaysOptions = (
 				</>
 				<>
 					<Nav.Item className='m-auto'>
+						<Link to='/contact' style={linkStyle}>
+						<span className='HoverClass1'>Contact</span>
+						</Link>
+					</Nav.Item>
+				</>
+				{/* <>
+					<Nav.Item className='m-auto'>
 						<Link to='/calendar' style={linkStyle}>
 						<span className='HoverClass1'>Calendar</span>
 						</Link>
 					</Nav.Item>
-				</>
+				</> */}
 		</Fragment>
 		
 	</>
@@ -112,7 +130,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<>
-			<Navbar variant='light' expand='md' className='border-bottom border-3 m-2 linkptile'>
+			<Navbar bg='dark' variant='light' expand='md' className='border-bottom border-3 mb-0 linkptile'>
 				<Navbar.Toggle aria-controls='basic-navbar-nav'/>
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='m-auto'>
@@ -126,10 +144,55 @@ const Header = ({ user }) => (
 				{/* <a href="/" target="_blank">
 					<FontAwesomeIcon icon={faYoutube} className='m-1 border border-4 shadow rounded' size="lg" color="darkred" />
 				</a> */}
-				<a href="mailto:eid2107@columbia.edu" target="_blank">
+				{/* <a href="mailto:eid2107@columbia.edu" target="_blank">
 					<FontAwesomeIcon icon={faEnvelope} className='m-1 border border-4 shadow rounded' size="lg" color="darkblue" />
-				</a>
-
+				</a> */}
+				<div style={{position: 'absolute', right: '0'}}>
+					<a href='https://www.facebook.com/jacobrclapper'>
+				      <Icon path={mdiFacebook}
+							title="User Profile"
+							size={1}
+							style={{marginRight: '11px'}}
+							// horizontal
+							// vertical
+							// rotate={90}
+							color="#3b5998"
+							/>
+					</a>
+					<a href=''>
+				      <Icon path={mdiGoogle}
+							title="User Profile"
+							size={1}
+							style={{marginRight: '11px'}}
+							// horizontal
+							// vertical
+							// rotate={90}
+							color="rgb(80,199,199)"
+							/>
+					</a>
+					<a href=''>
+				      <Icon path={mdiInstagram}
+							title="User Profile"
+							size={1}
+							style={{marginRight: '11px'}}
+							// horizontal
+							// vertical
+							// rotate={90}
+							color="#cd486b"
+							/>
+					</a>
+					<a href=''>
+				      <Icon path={mdiYoutube}
+							title="User Profile"
+							size={1}
+							style={{marginRight: '11px'}}
+							// horizontal
+							// vertical
+							// rotate={90}
+							color="#c4302b"
+							/>
+					</a>
+			</div>
 			</Navbar>
 			{user && 
 			<Navbar bg='light' variant='dark' expand='md' className='border-bottom border-3'>
