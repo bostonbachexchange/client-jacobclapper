@@ -7,19 +7,21 @@ import track3 from '../assets/recordings/Freundliche-Landschaft.mp3';
 import track4 from '../assets/recordings/Jobim-MP3.mp3';
 
 const album1 = [
-  { title: 'Track 1', url: track1, duration: null, composer: 'John Doe', performer: 'Jane Doe' },
-  { title: 'Track 2', url: track2, duration: null, composer: 'John Smith', performer: 'Jane Smith' },
+  { title: 'Footprints in the Snow', url: track1, duration: null, composer: 'Debussy', performer: 'Jacob Clapper' },
+  { title: 'Freundliche Landschaft', url: track3, duration: null, composer: 'Schumann', performer: 'Jacob Clapper' },
+  { title: 'Quiet Nights of Quiet Stars', url: track4, duration: null, composer: 'Jobim', performer: 'Jacob Clapper' },
+//   { title: 'Track 2', url: track2, duration: null, composer: 'John Smith', performer: 'Jane Smith' },
 ];
 
-const album2 = [
+// const album2 = [
 
-  { title: 'Track 3', url: track3, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
-  { title: 'Track 4', url: track4, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
-];
+//   { title: 'Track 3', url: track3, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
+//   { title: 'Track 4', url: track4, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
+// ];
 
 const Media = () => {
 	const [list1, setAlbum1] = useState(album1);
-	const [list2, setAblum2] = useState(album2);
+	// const [list2, setAblum2] = useState(album2);
 
 	return (
 		<div className='mb-0 pb-2' style={{backgroundColor: 'lightblue'}}>
@@ -30,9 +32,9 @@ const Media = () => {
 				<div className="m-auto mb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
 					<AudioPlayer tracks={list1}></AudioPlayer>
 				</div>
-				<div className="m-auto pb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
+				{/* <div className="m-auto pb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
 					<AudioPlayer  tracks={list2}></AudioPlayer>
-				</div>
+				</div> */}
 
 			</div>
 		</div>
