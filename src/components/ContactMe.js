@@ -31,7 +31,7 @@ export const ContactMe = () => {
   };
 
   return (
-    <div className='mb-0 pb-2' style={{backgroundColor: 'lightblue'}}>
+    <div className='mb-0 pb-2' style={{backgroundColor: ''}}>
         <div className='p-3' style={{opacity: '1.0'}}>
             <div className="">
 				<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Contact</h2>
