@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { faYoutube} from '@fortawesome/free-brands-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -33,8 +32,6 @@ const authStyle = {
 	marginRight: '12px',
   }
   
-  
-
 const brandStyle = {
     color: 'white',
 	padding: '0px',
@@ -130,7 +127,7 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
 	<>
-			<Navbar bg='dark' variant='light' expand='md' className='border-bottom border-3 mb-0 linkptile'>
+			<Navbar bg='dark' variant='dark' expand='md' className='border-bottom border-3 mb-0 linkptile p-2'>
 				<Navbar.Toggle aria-controls='basic-navbar-nav'/>
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='m-auto'>
@@ -147,7 +144,7 @@ const Header = ({ user }) => (
 				{/* <a href="mailto:eid2107@columbia.edu" target="_blank">
 					<FontAwesomeIcon icon={faEnvelope} className='m-1 border border-4 shadow rounded' size="lg" color="darkblue" />
 				</a> */}
-				<div style={{position: 'absolute', right: '0'}}>
+				<div className='m-3' style={{position: 'absolute', top: '0', right: '0'}}>
 					<a href='https://www.facebook.com/jacobrclapper'>
 				      <Icon path={mdiFacebook}
 							title="User Profile"
@@ -159,7 +156,7 @@ const Header = ({ user }) => (
 							color="#3b5998"
 							/>
 					</a>
-					<a href=''>
+					<a href='mailto:clapperpianist@gmail.com'>
 				      <Icon path={mdiGoogle}
 							title="User Profile"
 							size={1}
@@ -170,7 +167,7 @@ const Header = ({ user }) => (
 							color="rgb(80,199,199)"
 							/>
 					</a>
-					<a href=''>
+					<a href='https://www.instagram.com/clapperpianist/'>
 				      <Icon path={mdiInstagram}
 							title="User Profile"
 							size={1}
@@ -182,6 +179,7 @@ const Header = ({ user }) => (
 							/>
 					</a>
 					<a href=''>
+					{/* <a href='https://www.youtube.com/channel/UCZdJrUGgra3dvMQdsDrOJ0g'> */}
 				      <Icon path={mdiYoutube}
 							title="User Profile"
 							size={1}
