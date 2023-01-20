@@ -44,18 +44,38 @@ const Blog = (props) => {
 
 	const blogItems = blogs.map(blog => 
 		<>
-			<div className="m-auto mt-4 mb-5 fs-5" style={{width: '80%', border: '3px solid #AD974F', boxShadow: '3px 3px 3px grey', position: 'relative', borderRadius: '11px'}} key={blog._id}>
-				<div style={{position: "relative", backgroundColor: '#212121', color: '#AD974F', borderTopRightRadius: '10px', borderTopLeftRadius: '10px' }}>
-					<div style={{position: "absolute", right: 0}}><p className="m-2">{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
+			<div className="m-auto mt-4 mb-5 fs-5" 
+				style={{
+					width: '80%', 
+					border: '3px solid #AD974F', 
+					boxShadow: '3px 3px 3px grey', 
+					position: 'relative', 
+					borderRadius: '10px'}} 
+					key={blog._id}>
+				<div 
+				style={{ 
+					backgroundColor: '#212121', 
+					color: '#AD974F', 
+					borderTopRightRadius: '10px', 
+					borderTopLeftRadius: '10px',
+					display: 'flex'}}>
+						<div style={{flex: 2}}>
+							<p className="m-2"></p>
+						</div>
+					<div style={{
+						flex: 8
+						}}>
+						<h1 className='text-center p-2' style={{alignItems: 'center', color: '#AD974F', fontFamily: 'Roboto', }}>{blog.title}</h1>
 					</div>
-               		<h1 className='m-auto p-2' style={{poistion: 'absolute', textAlign: 'center', color: '#AD974F', fontFamily: 'Roboto'}}>{blog.title}</h1>
+					<div style={{flex: 2}}>
+						<p className="m-2">{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
+					</div>
            		</div>
-				<p className='text-center p-5 mb-0 mt-0 fs-4' style={{fontFamily: 'Rajdhani', fontSize: '20px', backgroundColor: 'whitesmoke', borderRadius: '11px', color: '#212121'}}>{blog.text.slice(0, 40) } ... </p>
-				{/* {(blog.text.length > 200) ?(<Link to={`/blog/${blog._id}`}>Continue Reading</Link>) : (null)} */}
+				<p className='text-center p-5 mb-0 mt-0 fs-4' style={{fontFamily: 'Rajdhani', fontSize: '20px', backgroundColor: 'whitesmoke', borderRadius: '11px', color: '#212121'}}>{blog.text.slice(0, 150) } ... </p>
 				<div className='text-center' style={{position: 'absolute', width: '100%', bottom: '-15%', backgroundColor: 'transparent'}}>
-						<button className="p-3 text-center rounded-pill conRdgBorder" style={{ border: '3px solid #212121', backgroundColor: '#AD974F'}} >
-							<Link to={`/blog/${blog._id}`} style={{color: 'black', textDecorationLine: 'none', fontSize: '20px', fontWeight: 'bold'}}><span className='conRdg'>Continue Reading</span></Link>
-						</button>
+					<Button className="p-3 text-center rounded-pill conRdgBorder" style={{ border: '3px solid #212121', backgroundColor: '#AD974F'}} >
+						<Link to={`/blog/${blog._id}`} style={{color: 'black', textDecorationLine: 'none', fontSize: '20px', fontWeight: 'bold'}}><span className='conRdg'>Continue Reading</span></Link>
+					</Button>
 				</div>
 			</div>
 		</>
