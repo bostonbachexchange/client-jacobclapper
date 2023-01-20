@@ -19,12 +19,18 @@ const album1 = [
 //   { title: 'Track 4', url: track4, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
 // ];
 
+const parentElement = {
+	backgroundColor: '#eee',
+	height: '100vh', 
+	width: '100vw', 
+  }
+
 const Media = () => {
 	const [list1, setAlbum1] = useState(album1);
 	// const [list2, setAblum2] = useState(album2);
 
 	return (
-		<div className='mb-0 pb-2' style={{backgroundColor: 'lightblue'}}>
+		<div className='mb-0 pb-2' style={parentElement}>
 			<div className='p-3'>
 				<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Media</h2>
 			</div>
@@ -35,7 +41,6 @@ const Media = () => {
 				{/* <div className="m-auto pb-3" style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
 					<AudioPlayer  tracks={list2}></AudioPlayer>
 				</div> */}
-
 			</div>
 		</div>
 	)

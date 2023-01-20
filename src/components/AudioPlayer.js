@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Howl, Howler } from 'howler';
 import PlayArrow from 'material-design-icons/av/svg/production/ic_play_arrow_48px.svg'
 import Pause from 'material-design-icons/av/svg/production/ic_pause_48px.svg'
@@ -12,8 +12,6 @@ const formatTime = (time) => {
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
-
-  
   
   const AudioPlayer = (props) => {
     console.log('tracks in props', props)
@@ -124,6 +122,9 @@ console.log('tracks', props)
     }));
   }, [currentTrack]);
 
+
+  
+  
   useEffect(() => {
     if (player) {
       const interval = setInterval(() => {
@@ -132,6 +133,11 @@ console.log('tracks', props)
       return () => clearInterval(interval);
     }
   }, [player, isPlaying]);
+
+  const [isVisible, setIsVisible] = useState(true);
+
+ 
+
 
   const TrackList = ({tracks, handleTrackClick, isPlaying, currentTrack}) => (
     <ul style={{padding: '0'}}>
@@ -142,16 +148,31 @@ console.log('tracks', props)
           style={{ 
             listStyle: 'none', 
             fontSize: '20px',
-            border: '1px solid lightblue',
+            borderBottom: '1px solid lightblue',
             margin: '1px',
             borderRadius: '3px',
-            width: '100%',
-            color: track === currentTrack ? '#A78B41' : 'white', 
-            // textDecoration: track === currentTrack ? 'underline': 'none',
-            padding: '5px'
+            width: '100%', 
+            padding: '5px',
+            display: 'flex'
           }}
         >
-          {isPlaying && track === currentTrack ?  <img src={Pause} style={{filter: 'invert(100%)', height: '20px', width: '20px'}} alt='Pause Icon' onClick={handlePause} /> :  <span className='p-2' style={{height: '20px', width: '20px'}} onClick={handlePlay}>{index + 1}</span> } <span className='ms-2'> {track.composer} - {track.performer}</span>
+            <span style={{display:'flex', flex: 1}}>
+            {isPlaying && track === currentTrack ?  
+                <img src={Pause} 
+                style={{filter: 'invert(100%)', width: '20px'}} 
+                alt='Pause Icon' 
+                onClick={handlePause} 
+                /> 
+                :  
+                <span className='text-center' 
+                style={{height: '20px', width: '20px'}} 
+                onClick={handlePlay}
+                >{index + 1}
+                </span> 
+                } 
+            </span>
+            <span style={{display:'flex', flex: 8, color: track === currentTrack ? '#A78B41' : 'white',}}> {track.composer} - {track.performer}</span> 
+            <span style={{display:'flex', flex: 1}}> {formatTime(track.duration)}</span>
         </li>
       ))}
     </ul>
@@ -159,28 +180,36 @@ console.log('tracks', props)
   
   const TrackInfo = ({ currentTrack }) => {
     return (
-      <div className="track-info">
-        <h4 className="m-2" style={{color: '#A78B41'}}><strong>
-          {currentTrack.title} - {currentTrack.composer} - {currentTrack.performer}</strong>
-        </h4>
-      </div>
-    );
+            <div>
+                <h4 className="p-1" 
+                    style={{
+                        color: '#A78B41', 
+                        borderTop: '1px solid lightblue',
+                        borderBottom: '1px solid lightblue',
+                        borderRadius: '3px', fontSize: '18px'}}>
+                    {currentTrack.title}, {currentTrack.composer}
+                </h4> 
+            </div>
+        );
   };
 
   
   return (
     <div>
-        <div className="text-center">
-            <TrackInfo currentTrack={currentTrack} isPlaying={isPlaying}/>
-        </div>
         <TrackList tracks={tracks} handleTrackClick={setCurrentTrack} isPlaying={isPlaying} currentTrack={currentTrack} />
-        <div className='text-center '>
+        <div className='text-center pb-2'>
             <img src={SkipPrevious} style={{filter: 'invert(96%)'}} alt='Previous Icon' onClick={handlePrevious} />
             <span className='rounded-circle background-light'>
                 {isPlaying ? <img src={Pause} style={{filter: 'invert(96%)'}} alt='Pause Icon' onClick={handlePause} /> : <img src={PlayArrow} style={{filter: 'invert(96%)'}} alt='Play Icon' onClick={handlePlay}/>}
             </span>     
             <img src={SkipNext} alt='Next Icon' style={{filter: 'invert(96%)'}} onClick={handleNext} />
         </div> 
+
+            <div className="text-center">
+                <TrackInfo currentTrack={currentTrack} isPlaying={isPlaying}/>
+            </div>
+      
+    
         <div className='text-center m-2'>
             {formatTime(currentTime)} / {formatTime(currentTrack.duration)}
         </div>

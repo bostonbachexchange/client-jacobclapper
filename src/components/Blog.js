@@ -13,6 +13,12 @@ const Blog = (props) => {
 	const [error, setError] = useState(false)
 	const { msgAlert } = props
 
+	const parentElement = {
+        backgroundColor: '#eee',
+        height: '100vh', 
+        width: '100vw', 
+      }
+
 	useEffect(() => {
 		getAllBlogs()
 			.then(res => setBlogs(res.data.blogs))
@@ -56,7 +62,7 @@ const Blog = (props) => {
 		)
 
 	return (	
-			<div style={{backgroundColor: 'lightblue'}} className="mb-0 pb-5">
+			<div style={parentElement}>
 				<div className='p-3'>
 					<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Blog</h2>
 				</div>
