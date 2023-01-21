@@ -134,10 +134,6 @@ console.log('tracks', props)
     }
   }, [player, isPlaying]);
 
-  const [isVisible, setIsVisible] = useState(true);
-
- 
-
 
   const TrackList = ({tracks, handleTrackClick, isPlaying, currentTrack}) => (
     <ul style={{padding: '0'}}>
@@ -147,7 +143,7 @@ console.log('tracks', props)
           onClick={() => handleTrackClick(track)} 
           style={{ 
             listStyle: 'none', 
-            fontSize: '20px',
+            fontSize: '14px',
             borderBottom: '1px solid lightblue',
             margin: '1px',
             borderRadius: '3px',
@@ -171,7 +167,7 @@ console.log('tracks', props)
                 </span> 
                 } 
             </span>
-            <span style={{display:'flex', flex: 8, color: track === currentTrack ? '#A78B41' : 'white',}}> {track.composer} - {track.performer}</span> 
+            <span style={{display:'flex', flex: 8, color: track === currentTrack ? '#A78B41' : 'white',}}>{track.title}, {track.composer}</span> 
             <span style={{display:'flex', flex: 1}}> {formatTime(track.duration)}</span>
         </li>
       ))}
@@ -184,10 +180,8 @@ console.log('tracks', props)
                 <h4 className="p-1" 
                     style={{
                         color: '#A78B41', 
-                        borderTop: '1px solid lightblue',
-                        borderBottom: '1px solid lightblue',
-                        borderRadius: '3px', fontSize: '18px'}}>
-                    {currentTrack.title}, {currentTrack.composer}
+                        fontSize: '18px'}}>
+                    {currentTrack.title}<br></br> {currentTrack.performer}
                 </h4> 
             </div>
         );
@@ -195,8 +189,29 @@ console.log('tracks', props)
 
   
   return (
-    <div>
-        <TrackList tracks={tracks} handleTrackClick={setCurrentTrack} isPlaying={isPlaying} currentTrack={currentTrack} />
+    <div className="m-auto mb-3" 
+            style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
+        <TrackList 
+            tracks={tracks} 
+            handleTrackClick={setCurrentTrack} 
+            isPlaying={isPlaying} 
+            currentTrack={currentTrack} />
+        <div className="text-center">
+            <TrackInfo currentTrack={currentTrack} isPlaying={isPlaying}/>
+        </div>
+        <div className='text-center p-2' style={{display: 'flex'}}>
+            <span className='' style={{flex: 2}}>
+                {formatTime(currentTime)}
+            </span>
+            <progress
+                max={currentTrack.duration}
+                value={currentTime}
+                style={{flex: 8}}
+            />   
+            <span style={{flex: 2}}>
+                {formatTime(currentTrack.duration)}
+            </span>
+        </div>
         <div className='text-center pb-2'>
             <img src={SkipPrevious} style={{filter: 'invert(96%)'}} alt='Previous Icon' onClick={handlePrevious} />
             <span className='rounded-circle background-light'>
@@ -204,21 +219,6 @@ console.log('tracks', props)
             </span>     
             <img src={SkipNext} alt='Next Icon' style={{filter: 'invert(96%)'}} onClick={handleNext} />
         </div> 
-
-            <div className="text-center">
-                <TrackInfo currentTrack={currentTrack} isPlaying={isPlaying}/>
-            </div>
-      
-    
-        <div className='text-center m-2'>
-            {formatTime(currentTime)} / {formatTime(currentTrack.duration)}
-        </div>
-        <div className='text-center p-2'>
-            <progress
-                max={currentTrack.duration}
-                value={currentTime}
-            />
-        </div>
         <div style={{display: 'flex'}}>
             <div className='mx-auto p-2' style={{display: 'flex', alignItems: 'center'}}>
             <img src={Volume} alt='Volume Icon' style={{filter: 'invert(96%)',height: '20px'}}/>

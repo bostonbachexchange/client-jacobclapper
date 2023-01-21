@@ -6,11 +6,11 @@ const Home = (props) => {
 
 const divStyle = {
 	background: `url(${nmbkg}) no-repeat center center`,
-	backgroundSize: 'cover'
+	backgroundSize: 'cover',    
   };
   
 	return (
-		<>
+		
 			<div style={divStyle}>
 				<div className='p-3' style={{opacity: '1.0'}}>
 					<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Biography</h2>
@@ -42,7 +42,7 @@ const divStyle = {
 					</address>
 				</div>
 			</div>
-		</>
+		
 	)
 }
 

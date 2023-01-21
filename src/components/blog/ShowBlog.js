@@ -5,6 +5,9 @@ import { Button } from "react-bootstrap"
 import messages from "../shared/AutoDismissAlert/messages"
 import dateFormat from "dateformat"
 import LoadingScreen from "../shared/LoadingScreen"
+import { Scramble } from 'react-scramble';
+
+
 
 const ShowBlog = (props) => {
     const [blog, setBlog] = useState({})
@@ -50,6 +53,9 @@ const ShowBlog = (props) => {
                 })
             })
     }
+    
+      
+      
     return (
         <>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
@@ -64,8 +70,8 @@ const ShowBlog = (props) => {
                 </div>
             </div>
 
-
             <div className="text-center m-4">
+                
                 <p className="m-4 fs-5 p-3" style={{fontFamily: 'Nunito'}}>{blog.text}</p>
                 {
                     blog.video?
