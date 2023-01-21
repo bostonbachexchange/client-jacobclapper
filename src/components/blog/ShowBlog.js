@@ -5,7 +5,6 @@ import { Button } from "react-bootstrap"
 import messages from "../shared/AutoDismissAlert/messages"
 import dateFormat from "dateformat"
 import LoadingScreen from "../shared/LoadingScreen"
-import { Scramble } from 'react-scramble';
 
 
 
