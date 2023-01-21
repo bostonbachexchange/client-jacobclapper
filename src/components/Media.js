@@ -1,27 +1,27 @@
 import { useState } from "react";
 import AudioPlayer from "./AudioPlayer"
 import MediaVideos from "./MediaVideos/MediaVideos";
-import track1 from '../assets/recordings/Footprints-in-the-Snow.mp3';
-import track2 from '../assets/recordings/For-the-Flowers.mp3';
+// import track1 from '../assets/recordings/Footprints-in-the-Snow.mp3';
+// import track2 from '../assets/recordings/For-the-Flowers.mp3';
 import track3 from '../assets/recordings/Freundliche-Landschaft.mp3';
 import track4 from '../assets/recordings/Jobim-MP3.mp3';
 import track5 from '../assets/recordings/Abschied.mp3';
-import track6 from '../assets/recordings/Blue-in-Green.mp3';
-import track7 from '../assets/recordings/christmas-time.mp3';
-import track8 from '../assets/recordings/Consolation.mp3';
-import track9 from '../assets/recordings/For-the-Flowers.mp3';
-import track10 from '../assets/recordings/Debussy-Prelude-I.mp3';
-import track11 from '../assets/recordings/Gnossienne-No-1.mp3';
-import track12 from '../assets/recordings/Gnossienne-No-2.mp3';
-import track13 from '../assets/recordings/Gnossienne-No-3.mp3';
-import track14 from '../assets/recordings/Greensleeves.mp3';
+// import track6 from '../assets/recordings/Blue-in-Green.mp3';
+// import track7 from '../assets/recordings/christmas-time.mp3';
+// import track8 from '../assets/recordings/Consolation.mp3';
+// import track9 from '../assets/recordings/For-the-Flowers.mp3';
+// import track10 from '../assets/recordings/Debussy-Prelude-I.mp3';
+// import track11 from '../assets/recordings/Gnossienne-No-1.mp3';
+// import track12 from '../assets/recordings/Gnossienne-No-2.mp3';
+// import track13 from '../assets/recordings/Gnossienne-No-3.mp3';
+// import track14 from '../assets/recordings/Greensleeves.mp3';
 import track15 from '../assets/recordings/Herberge_1.mp3';
-import track16 from '../assets/recordings/Lonnies-Lament.mp3';
-import track17 from '../assets/recordings/My-Favorite-Things.mp3';
-import track18 from '../assets/recordings/scarlatti-a-minor.mp3';
-import track19 from '../assets/recordings/scarlatti-f-minor.mp3';
-import track20 from '../assets/recordings/O-Tannenbaum.mp3';
-import track21 from '../assets/recordings/Traumerei.mp3';
+// import track16 from '../assets/recordings/Lonnies-Lament.mp3';
+// import track17 from '../assets/recordings/My-Favorite-Things.mp3';
+// import track18 from '../assets/recordings/scarlatti-a-minor.mp3';
+// import track19 from '../assets/recordings/scarlatti-f-minor.mp3';
+// import track20 from '../assets/recordings/O-Tannenbaum.mp3';
+// import track21 from '../assets/recordings/Traumerei.mp3';
 
 const album1 = [
   { title: 'Abschied', url: track5, duration: null, composer: 'Robert Schuman', performer: 'Jacob Clapper' },
