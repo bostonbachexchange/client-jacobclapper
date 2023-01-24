@@ -91,6 +91,36 @@ code {
   box-shadow: 5px 5px 5px #9E9E9E;
 }
 
+.formStyle {
+  display: flex;
+  flex: 6;
+  width: 50%;
+  padding: 20px;
+  margin: auto;
+  border: 2px solid #AD974F;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #eee;
+  
+}
+
+.paragraphStyle {
+  font-family: Roboto;
+  font-weight: 900;
+  display: flex;
+  flex: 6;
+  width: 50%;
+  margin: 19px auto;
+  size: 14px;
+  color: #5C5E62;
+}
+.blogReadMore {
+  position: absolute; 
+  width: 100%; 
+  bottom: -15%; 
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 600px) {
   .mediaPage {
     /* display: block; */
@@ -111,8 +141,22 @@ code {
   .mediaReverse {
     flex-direction: column-reverse;
   }
+  .formStyle {
+    width: 95%;
+  }
+  .paragraphStyle {
+    width: 100%;
+  }
+  .blogDate {
+    display: none !important; 
+  }
+  .blogDateMobile {
+    display: block !important; 
+  }
+  .blogReadMore {
 
-
+    bottom: -10%; 
+  }
 }
   
 .HoverClass1:hover {

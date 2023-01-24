@@ -6,8 +6,6 @@ import messages from "../shared/AutoDismissAlert/messages"
 import dateFormat from "dateformat"
 import LoadingScreen from "../shared/LoadingScreen"
 
-
-
 const ShowBlog = (props) => {
     const [blog, setBlog] = useState({})
     const [updated, setUpdated] = useState(false)

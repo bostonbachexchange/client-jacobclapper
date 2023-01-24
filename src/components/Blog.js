@@ -5,6 +5,7 @@ import messages from './shared/AutoDismissAlert/messages'
 import LoadingScreen from './shared/LoadingScreen'
 import { getAllBlogs } from '../api/blog'
 import dateFormat, { masks } from "dateformat";
+
 const Blog = (props) => {
 	// const { msgAlert, user } = props
 	const { updatedBlogs } = props
@@ -67,12 +68,23 @@ const Blog = (props) => {
 						}}>
 						<h1 className='text-center p-2' style={{alignItems: 'center', color: '#AD974F', fontFamily: 'Roboto', }}>{blog.title}</h1>
 					</div>
-					<div style={{flex: 2}}>
-						<p className="m-2">{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
+					{(window.innerWidth > 600) ? 
+						<div style={{
+							flex: 2
+							}}className='m-2'>
+							<p>{dateFormat(blog.date, "mmmm dS, yyyy")}</p>
+						</div> 
+						: 
+						<div style={{lex: 2}} className='m-2'>
+						<p className="m-2"></p>
 					</div>
+					}
+					
+
+
            		</div>
 				<p className='text-center p-5 mb-0 mt-0 fs-4' style={{fontFamily: 'Rajdhani', fontSize: '20px', backgroundColor: 'whitesmoke', borderRadius: '11px', color: '#212121'}}>{blog.text.slice(0, 150) } ... </p>
-				<div className='text-center' style={{position: 'absolute', width: '100%', bottom: '-15%', backgroundColor: 'transparent'}}>
+				<div className='text-center blogReadMore'>
 					<Button className="p-3 text-center rounded-pill conRdgBorder" style={{ border: '3px solid #212121', backgroundColor: '#AD974F'}} >
 						<Link to={`/blog/${blog._id}`} style={{color: 'black', textDecorationLine: 'none', fontSize: '20px', fontWeight: 'bold'}}><span className='conRdg'>Continue Reading</span></Link>
 					</Button>

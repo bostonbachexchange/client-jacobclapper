@@ -9,31 +9,6 @@ export const ContactMe = () => {
         height: '100vh', 
         width: '100vw', 
       }
-      
-      const formStyle = {
-        display: 'flex',
-        flex: '6',
-        width: '50%',
-        padding: '20px',
-        margin: 'auto',
-        border: '2px solid black',
-        borderRadius: '5px',
-        boxSizing: 'border-box',
-        backgroundColor: '#eee',
-
-    }
-
-
-    const paragraphStyle = {
-        fontFamily: 'Roboto',
-        fontWeight: '900',
-        display: 'flex',
-        flex: '6',
-        width: '50%',
-        margin: '19px auto',
-        size: '14px',
-        color: '5C5E62'
-    }
  
     const inputTextarea = {
         size: '18px',
@@ -69,9 +44,9 @@ export const ContactMe = () => {
             <div >
 				<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Contact</h2>
 			</div>
-            <p style={paragraphStyle}>Thank you for visiting my music website. I am a professional piano player and instructor available for piano lessons and gigs. Whether you're a beginner or experienced musician, I can help you improve your skills. If you're interested in scheduling a lesson or booking me for an event, please contact me and I will respond as soon as possible. Thank you for your interest in my services.</p>
+            <p className='paragraphStyle' >Thank you for visiting my music website. I am a professional piano player and instructor available for piano lessons and gigs. Whether you're a beginner or experienced musician, I can help you improve your skills. If you're interested in scheduling a lesson or booking me for an event, please contact me and I will respond as soon as possible. Thank you for your interest in my services.</p>
         </div>
-        <div style={formStyle}>
+        <div className='formStyle'>
             <Form ref={form}  onSubmit={sendEmail}>
                 <Form.Label style={textLables}>Name</Form.Label>
                 <input 
