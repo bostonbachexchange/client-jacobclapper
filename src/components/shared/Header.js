@@ -178,8 +178,7 @@ const Header = ({ user }) => (
 							color="#cd486b"
 							/>
 					</a>
-					<a href=''>
-					{/* <a href='https://www.youtube.com/channel/UCZdJrUGgra3dvMQdsDrOJ0g'> */}
+					<a href='https://www.youtube.com/channel/UCZdJrUGgra3dvMQdsDrOJ0g'>
 				      <Icon path={mdiYoutube}
 							title="User Profile"
 							size={1}
