@@ -68,8 +68,20 @@ const ShowBlog = (props) => {
             </div>
 
             <div className="text-center m-4">
-                
-                <p className="m-4 fs-5 p-3" style={{fontFamily: 'Nunito'}}>{blog.text}</p>
+            <p className="m-4 fs-5 p-3" style={{fontFamily: 'Nunito'}}>
+            {blog.text ?(<div> {
+                            blog.text.split("|").map((line, index) => (
+                                <div className={`text-center ${index === 0 ? "first-line" : ""}`} 
+                                style={line === "``" ? {color: "white"} : {}}>
+                                {index === 0 ? <b>{line.substring(0, 1)}</b> : ""}
+                                {line.substring(1)}
+                                </div>)
+                            ) 
+                        }
+                        </div>) : (null)}
+                </p>
+
+                {/* <p className="m-4 fs-5 p-3" style={{fontFamily: 'Nunito'}}>{blog.text}</p> */}
                 {
                     blog.video?
                     <>
