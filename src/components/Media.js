@@ -58,7 +58,8 @@ const jazzAblum = [
 const parentElement = {
 	backgroundColor: '#eee',
 	height: '100vh', 
-	width: '100vw', 
+	width: '100vw',
+	border: '1px solid green' 
   }
 
 const Media = () => {
@@ -77,11 +78,11 @@ const Media = () => {
 					backgroundColor: 'white'}}
 					>Media</h2>
 			</div>
-			<div className='mediaPage mediaReverse' >
+			<div className='mediaPage mediaReverse p-4' style={{	backgroundColor: '#eee',}}>
 					<div className='discriptionWeb'>
 						<h3><strong style={yujaColor}>Schumann</strong> | <em>Waldszenen Opus 82</em> </h3>
 						<p className="m-3 fs-5">Waldszenen Opus 82, also known as "Forest Scenes," is a set of nine piano pieces composed by Robert Schumann in 1848-1849. The pieces are meant to evoke the feeling of being in a forest, with each piece having its own unique character and atmosphere.
-						<ol style={{textAlign: 'left', fontSize: '0.7em'}} className='m-4'>
+						<ol style={{textAlign: 'left', fontSize: '0.7em', 	backgroundColor: '#eee'}} className='m-4'>
 							<li >Eintritt (Entrance)</li>
 							<li>Jäger auf der Lauer (Hunter on the Lookout)</li>
 							<li>Einsame Blumen (Lonely Flowers)</li>
@@ -94,11 +95,12 @@ const Media = () => {
 						</ol>
 						</p>
 					</div>
-					<div className='text-center' style={{flex: '6'}}>
+					<div className='text-center' style={{flex: '6', 	backgroundColor: '#eee',
+}}>
 						<AudioPlayer tracks={list1}></AudioPlayer>
 					</div>
 				</div>
-			<div >
+			<div className='p-2' style={{backgroundColor: '#eee'}}>
 				<MediaVideos/>
 			</div>
 		</div>

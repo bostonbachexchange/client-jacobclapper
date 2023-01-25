@@ -43,7 +43,7 @@ const MediaVideos = () => {
     return (
         <>
         <div className='mediaPage' >
-            <div className='mt-auto mb-auto' style={{flex: '6'}}>
+            <div className='mt-auto mb-auto p-4' style={{flex: '6'}}>
                 <iframe className='rounded videoWebStyle' src="https://www.youtube.com/embed/Retrm-5AqjQ" allowFullScreen></iframe>
             </div>
             <div className='discriptionWeb'>
@@ -60,13 +60,13 @@ const MediaVideos = () => {
             </p>
                 <VideoDetails/>
         </div>
-        <div className='text-center' style={{flex: '6'}}>
+        <div className='text-center p-4' style={{flex: '6'}}>
             <iframe className='rounded videoWebStyle'  src="https://www.youtube.com/embed/ndA9TgJGlQs" allowFullScreen></iframe>
         </div>
     </div>
     <div className='mediaPage' >
-        <div className='text-center mt-auto mb-auto' style={{flex: '6'}}>
-            <iframe className='rounded videoWebStyle' src="https://www.youtube.com/embed/lFIsG5iaNCg" allowFullScreen></iframe>
+        <div className='text-center mt-auto mb-auto p-4' style={{flex: '6'}}>
+            <iframe className='rounded videoWebStyle ' src="https://www.youtube.com/embed/lFIsG5iaNCg" allowFullScreen></iframe>
         </div>
         <div className='discriptionWeb' >
             <h3><strong style={yujaColor}>Godowsky</strong> | <em>Alt Wien</em></h3>
@@ -82,8 +82,8 @@ const MediaVideos = () => {
             </p>
             <VideoDetails/>
         </div>
-        <div className='text-center' style={{flex: '6'}}>
-            <iframe className='rounded videoWebStyle'  src="https://www.youtube.com/embed/Hz8lPLmeaZc" allowFullScreen></iframe>
+        <div className='text-center p-4' style={{flex: '6'}}>
+            <iframe className='rounded videoWebStyle'  style={{ border: '2px solid #A78B41'}} src="https://www.youtube.com/embed/Hz8lPLmeaZc" allowFullScreen></iframe>
         </div>
     </div>
     </>

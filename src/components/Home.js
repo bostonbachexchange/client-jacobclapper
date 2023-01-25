@@ -1,5 +1,6 @@
 import profilepic from '../assets/images/profileNMtreeJPG.JPG'
 import nmbkg from '../assets/images/nmbkg.jpg'
+import headshot from '../assets/images/headshot.JPG'
 
 const Home = (props) => {
 	console.log('props in home', props)
@@ -17,7 +18,7 @@ const divStyle = {
 				</div>
 				<div class='bioPage'>
 					<div className='image-container' style={{flex: '6'}}>
-						<img className="mt-5" src={profilepic} style={{display: 'flex', maxWidth: '95%', maxHeight: '95%', border: '2px solid white', borderRadius: '10px', margin: 'auto'}}></img>
+						<img className="mt-5" src={headshot} style={{display: 'flex', maxWidth: '95%', maxHeight: '75%', border: '2px solid white', borderRadius: '10px', margin: 'auto'}}></img>
 					</div>
 					<div style={{flex: '6', color: 'white'}}>
 						<p className="m-4 mt-5 fs-5">
