@@ -73,7 +73,7 @@ const ShowBlog = (props) => {
                             blog.text.split("|").map((line, index) => (
                                 <div className={`text-center ${index === 0 ? "first-line" : ""}`} 
                                 style={line === "``" ? {color: "white"} : {}}>
-                                {index === 0 ? <b>{line.substring(0, 1)}</b> : ""}
+                                {index === 0 ? <b><span style={{color: '#A78B41', fontSize: '2em', verticalAlign: 'middle'}}>{line.substring(0, 1)}</span></b> : ""}
                                 {line.substring(1)}
                                 </div>)
                             ) 
