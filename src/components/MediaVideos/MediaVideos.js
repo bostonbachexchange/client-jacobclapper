@@ -44,7 +44,7 @@ const MediaVideos = () => {
         <>
         <div className='mediaPage' >
             <div className='mt-auto mb-auto p-4' style={{flex: '6'}}>
-                <iframe className='rounded videoWebStyle' src="https://www.youtube.com/embed/Retrm-5AqjQ" allowFullScreen></iframe>
+                <iframe className='rounded videoWebStyle' style={{ border: '2px solid #A78B41'}} src="https://www.youtube.com/embed/Retrm-5AqjQ" allowFullScreen></iframe>
             </div>
             <div className='discriptionWeb'>
                 <h3 ><strong style={yujaColor}>Chopin</strong> | <em> Waltz, Opus 64 No. 2</em></h3>
@@ -61,12 +61,12 @@ const MediaVideos = () => {
                 <VideoDetails/>
         </div>
         <div className='text-center p-4' style={{flex: '6'}}>
-            <iframe className='rounded videoWebStyle'  src="https://www.youtube.com/embed/ndA9TgJGlQs" allowFullScreen></iframe>
+            <iframe className='rounded videoWebStyle' style={{ border: '2px solid #A78B41'}} src="https://www.youtube.com/embed/ndA9TgJGlQs" allowFullScreen></iframe>
         </div>
     </div>
     <div className='mediaPage' >
         <div className='text-center mt-auto mb-auto p-4' style={{flex: '6'}}>
-            <iframe className='rounded videoWebStyle ' src="https://www.youtube.com/embed/lFIsG5iaNCg" allowFullScreen></iframe>
+            <iframe className='rounded videoWebStyle ' style={{ border: '2px solid #A78B41'}} src="https://www.youtube.com/embed/lFIsG5iaNCg" allowFullScreen></iframe>
         </div>
         <div className='discriptionWeb' >
             <h3><strong style={yujaColor}>Godowsky</strong> | <em>Alt Wien</em></h3>

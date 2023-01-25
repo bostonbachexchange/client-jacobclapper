@@ -66,7 +66,7 @@ const Blog = (props) => {
 					<div style={{
 						flex: 8
 						}}>
-						<h1 className='text-center p-2' style={{alignItems: 'center', color: '#AD974F', fontFamily: 'Roboto', }}>{blog.title}</h1>
+						<h2 className='text-center p-2' style={{alignItems: 'center', color: '#AD974F', fontFamily: 'Lobster', }}>{blog.title}</h2>
 					</div>
 					{(window.innerWidth > 600) ? 
 						<div style={{
