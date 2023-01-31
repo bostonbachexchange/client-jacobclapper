@@ -14,7 +14,6 @@ const formatTime = (time) => {
   };
   
   const AudioPlayer = (props) => {
-    console.log('tracks in props', props)
     const { tracks } = props
     const [currentTrack, setCurrentTrack] = useState(tracks[0]);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -29,7 +28,10 @@ const formatTime = (time) => {
         });
     });
 
-console.log('tracks', props)
+console.log('props', props)
+console.log('player', player)
+console.log('Howler', Howler)
+
   const handleVolumeChange = (e) => {
     setVolume(e.target.value);
     Howler.volume(e.target.value);
@@ -102,8 +104,6 @@ console.log('tracks', props)
     }));
   };
 
-
-
   useEffect(() => {
     setPlayer(new Howl({
       src: [currentTrack.url],
@@ -121,9 +121,6 @@ console.log('tracks', props)
       ontimeupdate: () => setCurrentTime(player.seek())
     }));
   }, [currentTrack]);
-
-
-  
   
   useEffect(() => {
     if (player) {
@@ -193,7 +190,8 @@ console.log('tracks', props)
             style={{width: '400px', border: '2px solid #A78B41', borderRadius: '20px', boxShadow: '4px 4px 4px black', backgroundColor: '#333333', color: 'white'}}>
         <TrackList 
             tracks={tracks} 
-            handleTrackClick={setCurrentTrack} 
+            handleTrackClick={handleTrackClick} 
+            // handleTrackClick={setCurrentTrack} 
             isPlaying={isPlaying} 
             currentTrack={currentTrack} />
         <div className="text-center">

@@ -13,13 +13,14 @@ const Blog = (props) => {
 	const [blogs, setBlogs] = useState(null)
 	const [error, setError] = useState(false)
 	const { msgAlert } = props
-
+	const { player } = props
 	const parentElement = {
         backgroundColor: '#eee',
         height: '100vh', 
         width: '100vw', 
       }
 
+	
 	useEffect(() => {
 		getAllBlogs()
 			.then(res => setBlogs(res.data.blogs))
@@ -41,7 +42,6 @@ const Blog = (props) => {
 	} else if (blogs.length === 0) {
 		return <p className='text-center m-4'>No blogs yet. Check again soon.</p>
 	}
-
 
 	const blogItems = blogs.map(blog => 
 		<>
