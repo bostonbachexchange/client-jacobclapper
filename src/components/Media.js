@@ -12,48 +12,30 @@ import track6 from '../assets/recordings/Herberge.mp3';
 import track7 from '../assets/recordings/Vogel-als-Prophet.mp3';
 import track8 from '../assets/recordings/Jagdlied.mp3';
 import track9 from '../assets/recordings/Abschied.mp3';
-import track10 from '../assets/recordings/Jobim-MP3.mp3';
-// import track6 from '../assets/recordings/Blue-in-Green.mp3';
-// import track7 from '../assets/recordings/christmas-time.mp3';
-// import track8 from '../assets/recordings/Consolation.mp3';
-// import track9 from '../assets/recordings/For-the-Flowers.mp3';
-// import track10 from '../assets/recordings/Debussy-Prelude-I.mp3';
-// import track11 from '../assets/recordings/Gnossienne-No-1.mp3';
-// import track12 from '../assets/recordings/Gnossienne-No-2.mp3';
-// import track13 from '../assets/recordings/Gnossienne-No-3.mp3';
-// import track14 from '../assets/recordings/Greensleeves.mp3';
-// import track16 from '../assets/recordings/Lonnies-Lament.mp3';
+
 // import track17 from '../assets/recordings/My-Favorite-Things.mp3';
-// import track18 from '../assets/recordings/scarlatti-a-minor.mp3';
-// import track19 from '../assets/recordings/scarlatti-f-minor.mp3';
-// import track20 from '../assets/recordings/O-Tannenbaum.mp3';
+import track10 from '../assets/recordings/scarlatti-a-minor.mp3';
+import track11 from '../assets/recordings/scarlatti-f-minor.mp3';
+import track12 from '../assets/recordings/Liszt-V.mp3';
 // import track21 from '../assets/recordings/Traumerei.mp3';
 
 const album1 = [
-  { title: 'Eintritt', url: track1, duration: null, composer: 'Robert Schuman', performer: 'Jacob Clapper' },
-  { title: 'Jager auf der Lauer', url: track2, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Einsame Blumen', url: track3, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Verrufene Stelle', url: track4, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Freundliche Landschaft', url: track5, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Herberge', url: track6, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Vogel als Prophet', url: track7, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Jagdlied', url: track8, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
-  { title: 'Abschied', url: track9, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Sonata Op. 53', url: track11, duration: null, composer: 'Beethoven', performer: 'Jacob Clapper' },
+	{ title: 'Sonata in a minor', url: track10, duration: null, composer: 'Scarlatti', performer: 'Jacob Clapper' },
+	{ title: 'Vallee d\'Obermann', url: track12, duration: null, composer: 'Liszt', performer: 'Jacob Clapper' },
+	{ title: 'Eintritt', url: track1, duration: null, composer: 'Robert Schuman', performer: 'Jacob Clapper' },
+	{ title: 'Jager auf der Lauer', url: track2, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Einsame Blumen', url: track3, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Verrufene Stelle', url: track4, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Freundliche Landschaft', url: track5, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Herberge', url: track6, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Vogel als Prophet', url: track7, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Jagdlied', url: track8, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
+	{ title: 'Abschied', url: track9, duration: null, composer: 'Robert Schumann', performer: 'Jacob Clapper' },
 
-//   { title: 'Track 2', url: track2, duration: null, composer: 'John Smith', performer: 'Jane Smith' },
-];
-const jazzAblum = [
-	{ title: 'Quiet Nights of Quiet Stars', url: track4, duration: null, composer: 'Jobim', performer: 'Jacob Clapper' },
-  { title: 'Freundliche Landschaft', url: track3, duration: null, composer: 'Schumann', performer: 'Jacob Clapper' },
-  { title: 'Quiet Nights of Quiet Stars', url: track4, duration: null, composer: 'Jobim', performer: 'Jacob Clapper' },
 
 ];
 
-// const album2 = [
-
-//   { title: 'Track 3', url: track3, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
-//   { title: 'Track 4', url: track4, duration: null, composer: 'John Lee', performer: 'Jane Lee' },
-// ];
 
 const parentElement = {
 	backgroundColor: '#eee',
@@ -64,7 +46,6 @@ const parentElement = {
 
 const Media = () => {
 	const [list1, setAlbum1] = useState(album1);
-	// const [list2, setAblum2] = useState(album2);
     const yujaColor = {
         color: '#A78B41',
     }

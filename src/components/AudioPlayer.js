@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Howl, Howler } from 'howler';
 import PlayArrow from 'material-design-icons/av/svg/production/ic_play_arrow_48px.svg'
 import Pause from 'material-design-icons/av/svg/production/ic_pause_48px.svg'
@@ -28,9 +28,9 @@ const formatTime = (time) => {
         });
     });
 
-console.log('props', props)
-console.log('player', player)
-console.log('Howler', Howler)
+// console.log('props', props)
+// console.log('player', player)
+// console.log('Howler', Howler)
 
   const handleVolumeChange = (e) => {
     setVolume(e.target.value);
