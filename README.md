@@ -1,45 +1,37 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Jacob Clapper's Music Page
 
-# react-auth-boilerplate
+Welcome to my music page! This project is a React-based web application that provides a platform for exploring music-related content. It includes features such as a home page, blog section, media gallery, and more.
 
-A front-end framework template for starting projects with a recent version of
-either the [Django API Boilerplate](https://github.com/WDI-SEA/django-auth-boilerplate)
-or the [Express API Template](https://git.generalassemb.ly/sei-ec-remote/mongoose-express-auth-API-boilerplate).
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Technologies Used
+
+- React: ^17.0.2
+- React Router: ^6.0.2
+- Axios: ^0.24.0
+- Email.js: ^3.2.0
+- Bootstrap: ^5.1.3
+- FontAwesome: ^6.2.1
+- Howler: ^2.2.3
+- UUID: ^8.3.2
+- and more...
+
+Check the [package.json](./package.json) for a complete list of dependencies.
 
 ## Installation
 
-1. [Download](../../archive/main.zip) this template.
-1. Unzip and rename the template directory (`unzip ~/Downloads/react-auth-template-main.zip`).
-1. Move into the new project and `git init`.
-1. Change [`README.md`](README.md) to `REF.md` and add your planning `README.md` with your wireframes and user stories.
-1. Replace `react-auth-template` in `package.json` with your
-   project's name.
-1. Replace the `"homepage"` field in `package.json` with your (public) Github
-   account name and repository name.
-1. Install dependencies with `npm install`.
-1. `git add` and `git commit` your changes.
-1. Run the development server with `npm start`.
+1. Clone the repository:
 
-## Deployment
+   ```bash
+   git clone https://github.com/bostonbachexchange/jacobclapper-client.git
 
-Before deploying, you first need to make sure the `homepage` key in your
-`package.json` is pointing to the correct value. It should be the url of your
-deployed application.
-
-To deploy you should first make sure you are on the `main` branch with a
-clean working directory.
-
-Refer to react deployment documentation for more info.
-
-## About
-
-This template is derived from `create-react-app` and has minimal additional dependencies. The main additions are:
-```json
-"axios": "^0.24.0",
-"react-bootstrap": "^2.0.3",
-"react-router-dom": "^6.0.2",
-"sass": "^1.44.0",
-```
 
 It includes all the components and routes needed to sign up, sign in, change
 passwords, and sign out of an API built with either template linked above, with
@@ -52,22 +44,19 @@ messages, etc.
 
 ## Structure
 
-The top-level `App` function component stores the currently authenticated
-user in state, as well as data related to the flash messages, via hooks. `App` renders the
-`Header` component, and a list of routes, each of which render a component from
-`src/components`. The `src/api` directory has a component file, `auth.js`, which
-contains all the needed `axios` calls pertaining to authentication.
+jacobclapper-client/
+|-- public/
+|-- src/
+|   |-- components/
+|   |   |-- auth/
+|   |   |-- blog/
+|   |   |-- shared/
+|   |-- App.js
+|-- .env
+|-- package.json
+|-- README.md
+|-- ...
 
-It is recommended that you follow this pattern in your app as well. For instance, if you are making
-an app that keeps track of books, you might want a `src/api/books.js`, which
-contains its own `axios` call pertaining to your books resource CRUD actions.
-Using a separate directory within `components` for each individual component you
-add makes it easy to locate and update components and has the added benefit of
-making it easy to create custom styles that apply to that specific component.
-To apply component specific styles, add a file to the component's directory such
-as `ComponentName.scss` and then import it directly into the component with
-`import './ComponentName.scss'`.  This will keep your styles modularized and
-make it easier to make changes at the component level.
 
 ### Included Routes
 
@@ -228,9 +217,7 @@ const AboutPage = () => (
 export default AboutPage
 ```
 
-
 ## [License](LICENSE)
 
 1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+1. All software code is licensed under GNU GPLv3. 
