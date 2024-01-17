@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import dotenv from 'dotenv';
 import { Button, Form } from 'react-bootstrap';
+dotenv.config();
 
 export const ContactMe = (props) => {
   const { msgAlert } = props;
@@ -8,6 +10,11 @@ export const ContactMe = (props) => {
   const [memberdatabase, setMemberdatabase] = useState({
     emailList: ['clapperdev@gmail.com'],
   });
+
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+
 
   const parentElement = {
     backgroundColor: '#fff',
@@ -42,8 +49,7 @@ console.log('memberdatabase: ', memberdatabase)
   const sendEmail = (e) => {
     e.preventDefault();
     const data = {name: memberdatabase.name, emailList: memberdatabase.emailList.join(", "), message: memberdatabase.message, email: memberdatabase.email}
-    emailjs
-      .send('service_6ua4q8w', 'template_jpg5dtl', data, '38n3G7bbp-a_O5PNa')
+    emailjs.send(serviceId, templateId, data, userId)
       .then((response) => {
         msgAlert({
           heading: 'Send Success',
