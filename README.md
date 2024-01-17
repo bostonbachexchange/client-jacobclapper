@@ -2,6 +2,11 @@
 
 Welcome to my music page! This project is a React-based web application that provides a platform for exploring music-related content. It includes features such as a home page, blog section, media gallery, and more.
 
+## Deployed Application
+[https://www.jacobclapper.com]('https://www.jacobclapper.com')
+
+[API](https://github.com/bostonbachexchange/api-jacobclapper/tree/main)
+
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
