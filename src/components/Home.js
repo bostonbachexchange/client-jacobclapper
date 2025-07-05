@@ -1,4 +1,3 @@
-import profilepic from '../assets/images/profileNMtreeJPG.JPG'
 import nmbkg from '../assets/images/nmbkg.jpg'
 import headshot from '../assets/images/headshot.JPG'
 
