@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import emailjs from "emailjs-com";
-import dotenv from "dotenv";
-import { Button, Form } from "react-bootstrap";
-dotenv.config();
+import {
+  ContactSection,
+  ContactHeader,
+  Description,
+  StyledForm,
+  Label,
+  Input,
+  Textarea,
+  SubmitButton,
+  SocialIcons,
+  SocialIcon,
+} from "./ContactMe.styles";
 
-export const ContactMe = (props) => {
-  const { msgAlert } = props;
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 
+const ContactMe = ({ msgAlert }) => {
   const [memberdatabase, setMemberdatabase] = useState({
     emailList: ["clapperdev@gmail.com"],
   });
@@ -14,29 +29,21 @@ export const ContactMe = (props) => {
   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
   const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
   const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+const fullText = `Thank you for visiting my music website. If you're interested in scheduling a lesson or booking me for an event, please contact me and I will respond as soon as possible. Thank you for your interest.`;
 
-  const parentElement = {
-    backgroundColor: "#fff",
-    height: "100vh",
-    width: "100vw",
-  };
+const [displayedText, setDisplayedText] = useState("");
+const [index, setIndex] = useState(0);
 
-  const inputTextarea = {
-    size: "18px",
-    padding: "5px",
-    marginBottom: "2px",
-    width: "100%",
-    boxSizing: "border-box",
-    borderRadius: "5px",
-  };
+useEffect(() => {
+  if (index < fullText.length) {
+    const timeout = setTimeout(() => {
+      setDisplayedText((prev) => prev + fullText.charAt(index));
+      setIndex((prev) => prev + 1);
+    }, 40); // Speed of typing (ms per character)
 
-  const textLables = {
-    size: "18px",
-    padding: "6px",
-    marginBottom: "2px",
-    width: "100%",
-  };
-
+    return () => clearTimeout(timeout);
+  }
+}, [index]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setMemberdatabase((prevState) => ({
@@ -44,6 +51,7 @@ export const ContactMe = (props) => {
       [name]: value,
     }));
   };
+
   const sendEmail = (e) => {
     e.preventDefault();
     const data = {
@@ -54,7 +62,7 @@ export const ContactMe = (props) => {
     };
     emailjs
       .send(serviceId, templateId, data, userId)
-      .then((response) => {
+      .then(() => {
         msgAlert({
           heading: "Send Success",
           message: "Thanks!",
@@ -62,79 +70,100 @@ export const ContactMe = (props) => {
         });
         e.target.reset();
       })
-      .catch((err) => {
-        console.log("Error: ", err);
+      .catch(() => {
         msgAlert({
           heading: "Send Failure",
           message:
-            "An error occurred while sending the email. Please try again later",
+            "An error occurred while sending the email. Please try again later.",
           variant: "danger",
         });
       });
   };
 
   return (
-    <div style={parentElement}>
-      <div className="p-3">
-        <div>
-          <h2
-            className="m-auto p-1 text-center rounded-pill border-top border-bottom"
-            style={{
-              width: "200px",
-              boxShadow: "1px 1px 1px black",
-              backgroundColor: "white",
-            }}
+    <ContactSection>
+      <ContactHeader>Contact</ContactHeader>
+<Description>
+  {displayedText}
+  <span className="blinking-caret">|</span>
+</Description>
+
+
+      <StyledForm onSubmit={sendEmail}>
+        <Label>Name</Label>
+        <Input
+          type="text"
+          required
+          name="name"
+          placeholder="Your name"
+          onChange={handleChange}
+        />
+
+        <Label>Email</Label>
+        <Input
+          type="email"
+          required
+          name="email"
+          placeholder="Your email"
+          onChange={handleChange}
+        />
+
+        <Label>Message</Label>
+        <Textarea
+          name="message"
+          rows="4"
+          required
+          placeholder="Your message"
+          onChange={handleChange}
+        />
+
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </StyledForm>
+
+      <SocialIcons>
+        <SocialIcon>
+          <a href="mailto:clapperpianist@gmail.com" aria-label="Email">
+            <FaEnvelope />
+          </a>
+        </SocialIcon>
+        <SocialIcon>
+          <a
+            href="https://facebook.com/jacobrclapper"
+            target="_blank"
+            rel="noreferrer"
           >
-            Contact
-          </h2>
-        </div>
-        <p className="paragraphStyle pt-3">
-          Thank you for visiting my music website. If you're interested in
-          scheduling a lesson or booking me for an event, please contact me and
-          I will respond as soon as possible. Thank you for your interest.
-        </p>
-      </div>
-      <div className="formStyle">
-        <Form onSubmit={sendEmail}>
-          <Form.Label style={textLables}>
-            <strong>Name</strong>
-          </Form.Label>
-          <input
-            type="text"
-            required
-            placeholder="Your name"
-            style={inputTextarea}
-            name="name"
-            onChange={handleChange}
-          />
-          <label style={textLables}>
-            <strong>Email</strong>
-          </label>
-          <input
-            type="email"
-            required
-            style={inputTextarea}
-            placeholder="Your email"
-            name="email"
-            onChange={handleChange}
-          />
-          <label style={textLables}>
-            <strong>Message</strong>
-          </label>
-          <textarea
-            name="message"
-            required
-            rows="4"
-            placeholder="Your email"
-            style={inputTextarea}
-            onChange={handleChange}
-          />
-          <Button className="m-2" type="submit" value="Send">
-            Submit
-          </Button>
-        </Form>
-      </div>
-    </div>
+            <FaFacebookF />
+          </a>
+        </SocialIcon>
+        <SocialIcon>
+          <a
+            href="https://www.linkedin.com/in/jacob-clapper"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
+        </SocialIcon>
+        <SocialIcon>
+          <a
+            href="https://www.youtube.com/channel/UCZdJrUGgra3dvMQdsDrOJ0g"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaYoutube />
+          </a>
+        </SocialIcon>
+        <SocialIcon>
+          <a
+            href="https://www.instagram.com/clapperpianist/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram />
+          </a>
+        </SocialIcon>
+      </SocialIcons>
+    </ContactSection>
   );
 };
 
