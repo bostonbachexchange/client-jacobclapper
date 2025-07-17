@@ -1,49 +1,79 @@
-import nmbkg from '../assets/images/nmbkg.jpg'
-import headshot from '../assets/images/headshot.JPG'
+import headshot from "../assets/images/headshot.JPG";
+import {
+  HomeSection,
+  Header,
+  BioContent,
+  ImageWrapper,
+  HeadshotImage,
+  BioText,
+  Footer,
+} from "./Home.styles";
 
-const Home = (props) => {
-	console.log('props in home', props)
+const Home = () => {
+  return (
+    <HomeSection>
+      <Header>Biography</Header>
+      <BioContent>
+        <ImageWrapper>
+          <HeadshotImage src={headshot} alt="Jacob Clapper" />
+        </ImageWrapper>
+        <BioText>
+          <p>
+            Jacob Clapper is a versatile pianist, educator, and software
+            developer based in Massachusetts. He currently serves as Music
+            Director at the Unitarian Universalist All Souls Church in
+            Braintree, a position he has held since 2015. In addition to leading
+            services and programming there, Jacob is an active faculty member at
+            South Shore Conservatory, where he teaches private piano, music
+            theory, and facilitates student workshops and recitals. His work at
+            SSC emphasizes both artistic excellence and inclusive community
+            engagement, including collaborations with neurodiverse musicians and
+            leadership in the Community Voices choir.
+          </p>
+          <p>
+            Jacob’s collaborative piano work includes past engagements with
+            Curry College, where he served as a staff accompanist and private
+            lesson instructor from 2016 to 2020, and with Duxbury Public
+            Schools, where he performed in national venues such as Carnegie Hall
+            and Strathmore with the high school’s chamber choir. He currently
+            teaches students in Duxbury, Melrose, and Hingham.
+          </p>
+          <p>
+            A native of Texas, Jacob earned his Bachelor of Music degree from
+            Texas A&M University-Commerce in 2011 and went on to complete his
+            Master of Music in Piano Performance at the University of Florida,
+            where he also served as a graduate teaching assistant. He has
+            studied with renowned teachers including Luis Sanchez and Kevin Orr,
+            and has performed at festivals such as the University of Florida
+            International Piano Festival and in recitals at Steinway Hall.
+          </p>
+          <p>
+            In addition to his work in music, Jacob is a trained full-stack
+            software engineer, having completed a software engineering immersive
+            at General Assembly. He has experience with JavaScript, React,
+            Node.js, MongoDB, and Python, and enjoys building web applications
+            that support creatives and educators. He has developed tools for
+            music studios, online portfolios, and community organizations,
+            combining his love of technology with his passion for the arts.
+            Learn more at his developer site:{" "}
+            <a
+              href="https://jacobrclapper.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              jacobrclapper.dev
+            </a>
+          </p>
+        </BioText>
+      </BioContent>
+      <Footer>
+        <address>
+          <strong>Reach me: </strong>
+          <a href="mailto:clapperpianist@gmail.com">clapperpianist@gmail.com</a>
+        </address>
+      </Footer>
+    </HomeSection>
+  );
+};
 
-const divStyle = {
-	background: `url(${nmbkg}) no-repeat center center`,
-	backgroundSize: 'cover',    
-  };
-  
-	return (
-		
-			<div style={divStyle}>
-				<div className='p-3' style={{opacity: '1.0'}}>
-					<h2 className="m-auto p-1 text-center rounded-pill border-top border-bottom" style={{width: '200px', boxShadow: '1px 1px 1px black', backgroundColor: 'white'}}>Biography</h2>
-				</div>
-				<div class='bioPage'>
-					<div className='image-container' style={{flex: '6'}}>
-						<img className="mt-5" src={headshot} style={{display: 'flex', maxWidth: '95%', maxHeight: '75%', border: '2px solid white', borderRadius: '10px', margin: 'auto'}}></img>
-					</div>
-					<div style={{flex: '6', color: 'white'}}>
-						<p className="m-4 mt-5 fs-5">
-						Jacob Clapper is a highly accomplished pianist and music instructor, who has had a successful career in various roles in the music industry. He currently serves as the Music Director for the Unitarian Universalist All Souls Church in Braintree, where he has been working since 2015. He has also worked as a Collaborative Pianist for Curry College from 2016 to 2020 and taught private music instruction courses there from 2018 to 2020.
-						<br></br>
-						<br></br>
-						He has an extensive experience as a collaborative pianist, having worked with Duxbury Public Schools from 2014 until 2019, where he performed with the Duxbury High School Chamber Singers in concerts at Strathmore Hall, Carnegie Hall, and Disney. He currently teaches piano lessons in Duxbury, Braintree, and Melrose.
-						<br></br>
-						<br></br>
-						Jacob Clapper received his Bachelor of Arts from Texas A&M University-Commerce in 2011 and was awarded a Graduate Assistantship at the University of Florida. During his time as a Graduate Assistant, he taught undergraduate courses in piano skills and accompanied the Men’s Glee Club. He graduated from the University of Florida with a Master’s of Music degree and a concentration in piano performance in 2013.
-						<br></br>
-						<br></br>
-						Throughout his career, Jacob has received piano instruction from distinguished teachers and artists such as Luis Sanchez and Kevin Orr. He has also participated in the University of Florida International Piano Festival and performed in an Honors Recital at Steinway Hall in Plano, Texas.
-						<br></br>
-						<br></br>	
-						</p>
-					</div>
-				</div>
-				<div className='w-100 p-2' style={{border: '2px solid black', color: 'black', backgroundColor: '#EAEAEA' }}>
-					<address className="m-2"><strong>Reach me: </strong> 
-					<a href="mailto:clapperpianist@gmail.com">clapperpianist@gmail.com</a>
-					</address>
-				</div>
-			</div>
-		
-	)
-}
-
-export default Home
+export default Home;
