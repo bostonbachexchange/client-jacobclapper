@@ -56,7 +56,7 @@ const Home = () => {
             combining his love of technology with his passion for the arts.
             Learn more at his developer site:{" "}
             <a
-              href="https://jacobrclapper.dev"
+              href="https://jacobclapper.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
