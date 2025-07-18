@@ -1,4 +1,3 @@
-// === Home.styles.js ===
 import styled, { keyframes } from "styled-components";
 import nmbkg from "../assets/images/homebackground.png";
 

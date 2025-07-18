@@ -27,8 +27,7 @@ const Home = () => {
             South Shore Conservatory, where he teaches private piano, music
             theory, and facilitates student workshops and recitals. His work at
             SSC emphasizes both artistic excellence and inclusive community
-            engagement, including collaborations with neurodiverse musicians and
-            leadership in the Community Voices choir.
+            engagement.
           </p>
           <p>
             Jacob’s collaborative piano work includes past engagements with
