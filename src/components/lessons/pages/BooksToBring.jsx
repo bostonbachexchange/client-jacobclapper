@@ -24,7 +24,7 @@ const BooksToBring = () => {
           books are engaging and emphasize musicality.
           <span style={{color: 'green'}}><b> Recommended</b></span>
         </li>
-        <p className='paragraphStyle m-3'><em>Make sure that the book you order is marked </em><b> "Lesson".</b><em> This will be your primary book.</em></p>
+        <p className='paragraphStyle m-3'>Make sure that the book you order is marked "Lesson". This will be your primary book.</p>
         <div className='flex'>
           <div className='p-3' style={{display: 'inline-block'}}>
             <a href="https://pianoadventures.com/product/my-first-piano-adventure-lesson-book-a/" target='_blank'>
