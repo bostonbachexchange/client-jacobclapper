@@ -1,41 +1,87 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Panel, H1, H2, P } from "../lessons.styles";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Resources = () => {
+const Grid = styled.div`
+  display: grid;
+  gap: ${({ theme }) => theme.spacing(3)};
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+`;
 
-    return(
-      <div className='containerStyle fade-in'>
-        <h1>Piano Learning Resources</h1>
-        <ul className='nav-bar'>
-        <li >
-          <Link className='nav-customlink border border-2' to="../scaletable" >Scale Chart</Link>
-        </li>
-          </ul>
-        <hr style={{color: 'black', fontSize: "5px"}}></hr>
-        <h2>Sheet Music and Method Books</h2>
-        <ul>
-          <li><a href="https://imslp.org/" target="_blank">IMSLP (International Music Score Library Project)</a> - IMSLP offers a vast collection of free public domain sheet music, including classical compositions from renowned composers.</li>
-          <li><a href="https://pianoadventures.com" target="_blank">Faber and Faber</a> - Faber and Faber provides a range of piano method books and educational resources suitable for pianists of all levels.</li>
-          <li><a href="https://www.sheetmusicplus.com/" target="_blank">Sheet Music Plus</a> - Sheet Music Plus offers a wide selection of sheet music for various genres and skill levels, along with digital downloads.</li>
-          <li><a href="https://www.pianostreet.com/" target="_blank">Piano Street</a> - Piano Street provides a wealth of sheet music, educational materials, and a supportive community for pianists.</li>
-        </ul>
+const Card = styled.a`
+  display: block;
+  padding: ${({ theme }) => theme.spacing(4)};
+  background: ${({ theme }) => theme.colors.surface};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radius.lg};
+  box-shadow: ${({ theme }) => theme.shadow.sm};
+  text-decoration: none;
+  color: inherit;
 
-        <h2>Music Learning and Practice Apps</h2>
-        <ul>
-          <li><a href="https://www.musictheory.net/" target="_blank">MusicTheory.net</a> - MusicTheory.net offers free lessons and interactive exercises to improve your music theory knowledge and skills.</li>
-          <li><a href="https://irealpro.com/" target="_blank">iReal Pro</a> - iReal Pro is an app for creating and practicing with customizable backing tracks in various styles and genres.</li>
-        </ul>
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.muted};
+    text-decoration: none;
+  }
 
-        <h2>Online Piano Communities and Forums</h2>
-        <ul>
-          <li><a href="https://www.pianoworld.com/" target="_blank">Piano World Forums</a> - Piano World is a vibrant online community for piano enthusiasts to discuss various topics, share experiences, and seek advice.</li>
-          <li><a href="https://www.pianostreet.com/smf/" target="_blank">Piano Street Forum</a> - The Piano Street Forum is a place for pianists to connect, exchange ideas, and discuss all things related to the piano.</li>
-        </ul>
-        
-        <div>
-        </div>
-      </div>
-    )
+  h3 { margin-top: 0; margin-bottom: 8px; font-size: 18px; }
+  p  { margin: 0; color: ${({ theme }) => theme.colors.subtext}; }
+`;
+
+export default function Resources() {
+  return (
+    <Panel>
+      <H1>Piano Learning Resources</H1>
+
+      <H2>Studio Tools</H2>
+      <Grid>
+        <Card as={Link} to="../scaletable">
+          <h3>Scale Chart</h3>
+          <p>Major & minor scales with standard fingerings.</p>
+        </Card>
+      </Grid>
+
+      <H2>Sheet Music & Method Books</H2>
+      <Grid>
+        <Card href="https://imslp.org/" target="_blank" rel="noreferrer">
+          <h3>IMSLP</h3><p>Free public-domain classical scores.</p>
+        </Card>
+        <Card href="https://pianoadventures.com" target="_blank" rel="noreferrer">
+          <h3>Faber & Faber</h3><p>Method books for all levels.</p>
+        </Card>
+        <Card href="https://www.sheetmusicplus.com/" target="_blank" rel="noreferrer">
+          <h3>Sheet Music Plus</h3><p>Large catalog + digital options.</p>
+        </Card>
+        <Card href="https://www.pianostreet.com/" target="_blank" rel="noreferrer">
+          <h3>Piano Street</h3><p>Scores, practice tools, community.</p>
+        </Card>
+      </Grid>
+      <H2>Music Learning and Practice Apps</H2>
+      <Grid>
+        <Card href="https://www.musictheory.net/"
+        target="_blank" rel="noreferrer"
+        >
+            <h3>MusicTheory.net</h3><p>MusicTheory.net offers free lessons and interactive exercises to improve your music theory knowledge and skills.</p>
+        </Card>
+        <Card href="https://irealpro.com/"
+        target="_blank" rel="noreferrer"
+        >
+            <h3>iReal Pro</h3><p>iReal Pro is an app for creating and practicing with customizable backing tracks in various styles and genres.</p>
+        </Card>
+      </Grid>
+      <H2>Online Piano Communities and Forums</H2>
+      <Grid>
+        <Card href="https://www.pianoworld.com/"
+        target="_blank" rel="noreferrer"
+        >
+            <h3>Piano World Forums</h3><p>Piano World is a vibrant online community for piano enthusiasts to discuss various topics, share experiences, and seek advice.</p>
+        </Card>
+        <Card href="https://www.pianostreet.com/smf/"
+        target="_blank" rel="noreferrer"
+        >
+            <h3>Piano Street Forum</h3><p>The Piano Street Forum is a place for pianists to connect, exchange ideas, and discuss all things related to the piano.</p>
+        </Card>
+      </Grid>
+    </Panel>
+  );
 }
-
-export default Resources
